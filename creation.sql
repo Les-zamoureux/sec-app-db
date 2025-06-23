@@ -12,6 +12,7 @@ CREATE TABLE product (
    description TEXT,
    rating INTEGER,
    color TEXT
+   image_path TEXT
 );
 
 CREATE TABLE category (
@@ -142,7 +143,17 @@ CREATE TABLE has_ordered (
 CREATE TABLE contains_product (
    product_id INTEGER,
    order_id INTEGER,
+   quantity INTEGER,
    PRIMARY KEY(product_id, order_id),
    FOREIGN KEY (product_id) REFERENCES product(id),
    FOREIGN KEY (order_id) REFERENCES orders(id)
+);
+
+
+CREATE TABLE logs (
+    id SERIAL PRIMARY KEY,
+    user_id TEXT,
+    method TEXT,
+    url TEXT,
+    timestamp TIMESTAMPTZ DEFAULT NOW()
 );

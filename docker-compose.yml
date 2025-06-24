@@ -20,6 +20,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
       PGADMIN_DEFAULT_PASSWORD: strong-password
     volumes:
+      - ./creation.sql:/docker-entrypoint-initdb.d
       - pgadmin-data:/var/lib/pgadmin
 
 volumes:

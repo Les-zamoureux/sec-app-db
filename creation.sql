@@ -12,7 +12,6 @@ CREATE TABLE product (
    description TEXT,
    rating INTEGER,
    color TEXT
-   image_path TEXT
 );
 
 CREATE TABLE category (
